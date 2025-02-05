@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @org.springframework.stereotype.Controller
-public class TestController {   ///여기 컨트롤러 고쳤지롱  ///이렇게 적으면 자동으로 로컬에 들어간다구? 
+public class TestController {   ///여기 컨트롤러 고쳤지롱  ///패치테스트 다시다시
 
 
     @Autowired
