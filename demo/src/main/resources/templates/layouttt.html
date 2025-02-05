@@ -1,0 +1,21 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+<section th:replace="~{/header :: HeaderFragment}"></section>
+<!--<section layout:fragment="content"></section> 레이아웃 템플릿에서 콘텐츠 영역을 정의 -->
+<section layout:fragment="concon"></section> <!--레이아웃 템플릿에서 콘텐츠 영역을 정의-->
+<section th:replace="~{/footer :: Foos}"></section>
+</body>
+
+
+</html>

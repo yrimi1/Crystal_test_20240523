@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 리소스의 .xml 파일은 SQL쿼리와 자바의 인터페이스(아래 네임스페이스 경로파일)를 연결하는 맵핑파일 -->
+<!-- .xml 파일과 연결되는 파일은 반드시 인터페이스일것 -->
+<!-- 아래경로에 있는 맵퍼인터페이스가  (id가 "findStore_S"인 프로시저)를 호출하면  -->
+<mapper namespace="com.example.demo.testMapper">  <!--매퍼태그사용힘-->
+
+
+    <select id="findStore_S" statementType="CALLABLE" resultType="com.example.demo.Product">
+        { call findStore()}
+    </select>
+
+</mapper>
+

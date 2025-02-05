@@ -1,0 +1,98 @@
+<!--<th:block layout:fragment="content"-->
+<!doctype html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layouttt}" lang="ko">
+
+
+<section layout:fragment="concon">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>DDDocument</title>
+
+    <style>
+        table ,tr,td { border: 1px solid black ;
+                       border-Collapse : collapse;
+                       padding : 8px;}
+        #btnselect { }
+        #productID { background-color : Yellow ;}
+        .qty { background-color : blue ;}
+        .comments {background-color: cornflowerblue }
+        .btbt:hover{ transform : rotate(180deg)}
+        .btbt{ transition: 2s; }
+    </style>
+</head>
+
+
+    <!--
+     <th> : able head , 표의 제목을 쓰는 역할(기본값은 굵은 글씨체에, 중앙 정렬)
+     <tr> : table row , 가로줄을 만드는 역할 (기본값은 보통 글씨체에, 왼쪽 정렬)
+     <td> : table data , 셀을 만드는 역할   (기본값은 보통 글씨체에, 왼쪽 정렬)
+    -->
+
+
+<body>
+<h1>Home 입니다.</h1>
+
+<h2>layouttt.html은 레이아웃파일 home.html은 페이지파일(개별 템플릿 파일) </h2>
+<h2>layouttt.html의 concon 자리에 home.html에서 concon 으로 정의된 내용이 삽입</h2>
+<h2>layouttt.html이 concon자리정의 home.html이 concon내용을정의 그래서 양쪽 다 concon을 써서 해당자리와 해당내용을 서로 알려준다 </h2>
+
+<h2>
+    .html들 구분법 :
+    1.레이아웃은 layout:decorate을 안쓴다. 데코레이터가있으면 페이지파일
+    2.레이아웃은 layout:fragment="concon" 안에 아무내용이 없다. 자리만 정의하니까
+</h2>
+
+<button id="btnselect" class = "btbt" >조회</button>
+
+<table>
+    <thead>
+        <tr>
+            <td >순서11111</td>
+            <td id = "productID" >상품명1111</td>
+            <td class = "qty">수량1111</td>
+            <td class = "comments">비고1111</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr th:each="product, i : ${prolist}">
+            <td th:text="${i.count}"></td>
+            <td th:text="${product.productZZZ}"></td>
+            <td th:text="${product.qty}"></td>
+            <td th:text="${product.comments}"></td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<script>
+    function fillgrid(){
+        if (confirm("검색하시겠습니까?")) {
+            location.href = "http://localhost:8080/fillgrid"
+        }
+    }
+
+
+    let btn = document.querySelector('#btnselect');
+
+
+    btn.addEventListener('click',fillgrid)
+
+
+</script>
+
+
+</body>
+
+
+</section>
+</html>
