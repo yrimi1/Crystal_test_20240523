@@ -6,7 +6,10 @@
 <!-- 아래경로에 있는 맵퍼인터페이스가  (id가 "findStore_S"인 프로시저)를 호출하면  -->
 <mapper namespace="com.example.demo.testMapper">  <!--매퍼태그사용힘-->
 
-
+    <!-- ID는 매퍼 인터페이스에서 사용되므로 양쪽 이름이 같은지 확인할것 -->
+    <!-- { call findStore()}구문으로 findStore 프로시저를실행하고,-->
+    <!-- 반환값은 resultType="com.example.demo.Product" 클래스 형태로 반환한다-->
+    <!-- 참고로 CALLABLE은 저장된 프로시저 호출시 사용  -->
     <select id="findStore_S" statementType="CALLABLE" resultType="com.example.demo.Product">
         { call findStore()}
     </select>

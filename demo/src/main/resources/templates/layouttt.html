@@ -17,5 +17,37 @@
 <section th:replace="~{/footer :: Foos}"></section>
 </body>
 
+<!--
+
+
+layouttt.html이 concon자리정의
+home.html이 concon내용정의
+그래서 양쪽 다 concon을 써서 해당자리와 해당내용을 서로 알려준다
+
+디자인 파일에는 뼈대를 세우는 (레이아웃파일)과 내용을 넣는 (개별템플릿파일)이 있다.
+두 파일 모두 <section layout:fragment="concon"> 동일하게 적지만. 레이아웃파일은 뼈대이므로 안에 아무 내용도 넣지않는다.
+반면에 개별템플릿 파일은 레이아웃에 정의된 concon의 자리에 넣을 것을 적는다.
+또한, 개별 템플릿은 layout:decorate="~{/layouttt} 으로 적어 , 이 hemo.html 개별템플릿이 layouttt.html의 레이아웃을 참조하는것을 명시한다.
+
+
+
+ㅡ>  th:replace="~{/header :: HeaderFragment}"
+ㅡ>  타임리프다_대체할게="~{/템플릿 파일 경로 :: 프래그먼트 이름}"
+     ~{} 이렇게 쓰느것은 타임리프의 URL표현식이다.
+
+ㅡ>  layout:fragment="content"
+ㅡ>  layout:fragment="프래그먼트의 이름"
+     "이 섹션은 레이아웃 템플릿의 'content' 프래그먼트의 일부분이다" 이것을
+
+
+layout:fragment 속성: 이것은 타임리프(Thymeleaf)가 아닌
+다른 템플릿 엔진인 Thymeleaf Layout Dialect에서 제공하는 속성
+레이아웃 템플릿(layout template)을 사용할 때 사용됨
+레이아웃 템플릿은 웹 페이지의 레이아웃 구조를 정의하는 데 사용되며, 여기에는 여러 프래그먼트(fragment)가 포함될 수 있습니다.
+
+레이아웃 템플릿 내에서 프래그먼트의 역할을 정의합니다.
+
+-->
+
 
 </html>
