@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @org.springframework.stereotype.Controller
-public class TestController {
+public class TestController {   ///여기 컨트롤러 고쳤지롱
 
 
     @Autowired
